@@ -2,7 +2,7 @@
 @section('content')
 <div class="panel panel-headline">
     <div class="panel-heading">
-        <h3 class="panel-title">Sistem Penilaian Kinerja Pegawai</h3>
+        <h3 class="panel-title">Sistem Penilaian Kinerja Karyawan</h3>
         <p class="panel-subtitle">
             {{ date('d F Y') }}
         </p>
