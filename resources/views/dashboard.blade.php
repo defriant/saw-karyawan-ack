@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-md-12" style="height: 300px; display: flex; flex-direction: column; justify-content: center; align-items:center;">
                 <img src="{{ asset('assets/img/1640948278560.png') }}" style="width: 250px;">
-                <h4><b>PT BERKAT PUTRA MANDIRI (BPM)</b></h4>
+                <h4><b>CV. ALENINA CIPTA KREASI</b></h4>
             </div>
         </div>
         <br><br>
