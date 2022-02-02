@@ -71,6 +71,7 @@ class WebController extends Controller
         return view('dashboard', compact('karyawan', 'kriteria'));
     }
 
+    // Ambil data karyawan
     public function get_data_karyawan()
     {
         $karyawan = Karyawan::all();
@@ -81,6 +82,7 @@ class WebController extends Controller
         return response()->json($response);
     }
 
+    // Input data karyawan
     public function input_data_karyawan(Request $request)
     {
         $idKaryawan = 'K' . $this->random('num', 4);
@@ -155,6 +157,7 @@ class WebController extends Controller
         return response()->json($response);
     }
 
+    // Update data karyawan
     public function update_data_karyawan(Request $request)
     {
         Karyawan::where('id', $request->id)->update([
@@ -172,6 +175,7 @@ class WebController extends Controller
         return response()->json($response);
     }
 
+    // Hapus data karyawan
     public function delete_data_karyawan(Request $request)
     {
         Karyawan::where('id', $request->id)->delete();
@@ -185,6 +189,7 @@ class WebController extends Controller
         return response()->json($response);
     }
 
+    // Ambil data kriteria
     public function get_kriteria()
     {
         $kriteria = Kriteria::all();
@@ -196,6 +201,7 @@ class WebController extends Controller
         return response()->json($response);
     }
 
+    // Input kriteria
     public function add_kriteria(Request $request)
     {
         $idKriteriaMax = Kriteria::all();
@@ -261,6 +267,7 @@ class WebController extends Controller
         return response()->json(["response" => "success"]);
     }
 
+    // Update kriteria
     public function update_kriteria(Request $request)
     {
         Kriteria::where('id', $request->id)->update([
@@ -289,6 +296,7 @@ class WebController extends Controller
         return response()->json(["response" => "success"]);
     }
 
+    // Hapus kriteria
     public function delete_kriteria(Request $request)
     {
         Kriteria::where('id', $request->id)->delete();
@@ -315,12 +323,14 @@ class WebController extends Controller
         return response()->json(["response" => "success"]);
     }
 
+    // Ambil data kriteria normalisasi
     public function get_kriteria_normalisasi()
     {
         $nkriteria = NKriteria::all();
         return response()->json($nkriteria);
     }
 
+    // Ambil sub kriteria
     public function get_sub_kriteria()
     {
         $SubKriteria = SubKriteria::all();
@@ -332,6 +342,7 @@ class WebController extends Controller
         return response()->json($response);
     }
 
+    // Tambah sub kriteria
     public function add_sub_kriteria(Request $request)
     {
         $idKriteriaMax = SubKriteria::all();
@@ -357,6 +368,7 @@ class WebController extends Controller
         return response()->json(["response" => "success"]);
     }
 
+    // Update sub kriteria
     public function update_sub_kriteria(Request $request)
     {
         SubKriteria::where('id', $request->id)->update([
@@ -366,6 +378,7 @@ class WebController extends Controller
         return response()->json(["response" => "success"]);
     }
 
+    // Hapus sub kriteria
     public function delete_sub_kriteria(Request $request)
     {
         SubKriteria::where('id', $request->id)->delete();
@@ -373,6 +386,7 @@ class WebController extends Controller
         return response()->json(["response" => "success"]);
     }
 
+    // Ambil data penilaian
     public function get_penilaian_karyawan(Request $request)
     {
         $penilaian = Penilaian::where('periode', $request->periode)->get();
@@ -411,6 +425,7 @@ class WebController extends Controller
         }
     }
 
+    // Buat data penilaian
     public function create_penilaian_karyawan(Request $request)
     {
         $kriteria = Kriteria::all();
@@ -455,6 +470,7 @@ class WebController extends Controller
         return response()->json(["response" => "success"]);
     }
 
+    // Ambil data update penilaian
     public function update_get_penilaian_karyawan(Request $request)
     {
         $penilaian = Penilaian::where('periode', $request->periode)->where('id_karyawan', $request->id_karyawan)->get();
@@ -477,6 +493,7 @@ class WebController extends Controller
         return response()->json($response);
     }
 
+    // Ubah data penilaian
     public function update_penilaian_karyawan(Request $request)
     {
         foreach ($request->kriteria as $key => $value) {
@@ -513,6 +530,7 @@ class WebController extends Controller
         return response()->json(["response" => "success"]);
     }
 
+    // Ambil data normalisasi penilaian
     public function get_normalisasi_penilaian_karyawan(Request $request)
     {
         $npenilaian = NPenilaian::where('periode', $request->periode)->get();
@@ -548,6 +566,7 @@ class WebController extends Controller
         }
     }
 
+    // Buat hasil akhir (implementasi Saw)
     public function get_final_result(Request $request)
     {
         $result = [];
