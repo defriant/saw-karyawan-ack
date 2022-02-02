@@ -6,12 +6,15 @@
             {{-- Penilaian --}}
             <div class="panel-heading">
                 <h3 class="panel-title">Peringkat berdasarkan penilaian</h3>
+                <div class="right no-print">
+                    <button type="button" id="btn-print-hasil"><i class="far fa-print"></i>&nbsp; Print</button>
+                </div>
             </div>
-            <div class="panel-body">
+            <div class="panel-body" id="print-area">
                 <p>Periode penilaian :</p>
                 <div class="input-group" style="width: 300px">
                     <input class="form-control" type="text" id="periode-penilaian" readonly>
-                    <span class="input-group-btn"><button class="btn btn-primary" type="button" id="search-hasil"><i class="fas fa-search"></i></button></span>
+                    <span class="input-group-btn no-print"><button class="btn btn-primary" type="button" id="search-hasil"><i class="fas fa-search"></i></button></span>
                 </div>
                 <div class="loader" id="hasil-loader">
                     <i class="fas fa-ban" style="font-size: 5rem; opacity: .5"></i>
@@ -19,7 +22,7 @@
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4" style="margin-top: 3rem; margin-bottom: 3rem">
                         <table class="table table-bordered" id="table-hasil-penilaian">
                             <thead>
                                 <tr>
@@ -33,6 +36,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{-- <br> --}}
                     <div class="col-md-8">
                         <canvas id="hasil-chart"></canvas>
                     </div>

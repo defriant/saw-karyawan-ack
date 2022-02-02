@@ -59,7 +59,7 @@
             </div>
         </nav>
 
-        <div id="sidebar-nav" class="sidebar">
+        <div id="sidebar-nav" class="sidebar no-print">
             <div class="sidebar-scroll">
                 <nav>
                     <ul class="nav">
